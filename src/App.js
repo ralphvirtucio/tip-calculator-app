@@ -1,20 +1,19 @@
 import logo from './images/logo.svg';
+import styles from './App.module.css';
+import { Input } from './components/Input';
 
 function App() {
   return (
-    <div>
-      <header>
+    <div className={styles.container}>
+      <header className={styles.header}>
         <img src={logo} alt='Logo' />
-        <h1>Tip Calculator</h1>
+        <h1 className={styles['visually-hidden']}> Tip Calculator</h1>
       </header>
 
-      <main>
+      <main className={styles.main}>
         <form>
           <section>
-            <div>
-              <label htmlFor='bill'>Bill</label>
-              <input type='number' id='bill' />
-            </div>
+            <Input name='bill' label='Bill' class='bg-bill' />
 
             <fieldset>
               <legend>Select tip %</legend>
@@ -45,10 +44,7 @@ function App() {
               </div>
             </fieldset>
 
-            <div>
-              <label htmlFor='people'>Number of People</label>
-              <input type='number' id='people' />
-            </div>
+            <Input name='people' label='Number of People' class='bg-people' />
           </section>
 
           <section>

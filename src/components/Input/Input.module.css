@@ -1,0 +1,33 @@
+.form__control {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.label {
+  color: var(--neutral-color-2);
+
+}
+
+.input {
+  font-size: var(--fs-inputs);
+  text-align: right;
+  padding-inline: 1rem;
+  padding-block: .25rem;
+  background-color: var(--neutral-color-5);
+  border: none;
+  border-radius: 4px;
+  color: var(--neutral-color-1);
+}
+
+.bg-bill {
+  background-image: url('../../images/icon-dollar.svg');
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+
+.bg-people {
+  background-image: url('../../images/icon-person.svg');
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
