@@ -1,6 +1,7 @@
 import logo from './images/logo.svg';
 import styles from './App.module.css';
 import { Input } from './components/Input';
+import { SelectTip } from './components/SelectTip';
 
 function App() {
   return (
@@ -15,34 +16,7 @@ function App() {
           <section>
             <Input name='bill' label='Bill' class='bg-bill' />
 
-            <fieldset>
-              <legend>Select tip %</legend>
-
-              <div>
-                <input type='radio' name='tip' id='five-percent' />
-                <label htmlFor='five-percent'>5%</label>
-              </div>
-              <div>
-                <input type='radio' name='tip' id='ten-percent' />
-                <label htmlFor='ten-percent'>10%</label>
-              </div>
-              <div>
-                <input type='radio' name='tip' id='fifteen-percent' />
-                <label htmlFor='fifteen-percent'>15%</label>
-              </div>
-              <div>
-                <input type='radio' name='tip' id='twenty-five-percent' />
-                <label htmlFor='twenty-five-percent'>25%</label>
-              </div>
-              <div>
-                <input type='radio' name='tip' id='fifty-percent' />
-                <label htmlFor='fifty-percent'>50%</label>
-              </div>
-
-              <div>
-                <input type='number' placeholder='Custom' />
-              </div>
-            </fieldset>
+            <SelectTip />
 
             <Input name='people' label='Number of People' class='bg-people' />
           </section>

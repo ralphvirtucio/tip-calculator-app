@@ -1,0 +1,33 @@
+.select-tip {
+  margin-block: 2rem;
+  border: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+}
+
+.label {
+  display: inline-block;
+  color: var(--neutral-color-2);
+  margin-block-end: .5rem;
+}
+
+
+.custom__input input {
+  height: 100%;
+  border-radius: 4px;
+  font-size: var(--fs-inputs);
+  border: none;
+  background-color: var(--neutral-color-5);
+  width: 100%;
+  text-align: right;
+  padding-inline: 1rem;
+  color: var(--neutral-color-1);
+
+}
+
+.custom__input input::placeholder {
+  color: var(--neutral-color-2);
+}

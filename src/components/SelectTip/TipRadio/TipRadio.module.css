@@ -1,0 +1,17 @@
+.tip {
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  align-items: center;
+  background-color: var(--neutral-color-1);
+  padding-block: .5rem;
+}
+
+.tip label {
+  color: var(--neutral-color-6);
+  font-size: var(--fs-inputs);
+}
+
+.tip input[type='radio'] {
+  display: none;
+}
