@@ -1,0 +1,39 @@
+.container {
+  background-color: var(--neutral-color-1);
+  border-radius: 16px;
+  color: var(--neutral-color-6);
+  padding-inline: 1.5rem;
+  padding-block-start: 3rem;
+  padding-block-end: 2rem;
+  margin-block-start: 4rem;
+  margin-inline: 1.25rem;
+
+}
+
+.labels-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 2rem;
+}
+
+.price__label--2 {
+  color: var(--neutral-color-3);
+  font-size: .85rem;
+}
+
+.price {
+  color: var(--primary-color-1);
+  font-size: 2rem;
+}
+
+.reset__btn {
+  background-color: var(--primary-color-1);
+  border: none;
+  font-size: var(--fs-inputs);
+  color: var(--neutral-color-1);
+  border-radius: 4px;
+  width: 100%;
+  padding-block: .5rem;
+  text-transform: uppercase;
+}

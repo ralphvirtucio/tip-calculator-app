@@ -22,11 +22,14 @@
   width: 1px;
 }
 
+.section--1 {
+  padding-inline: 2rem;
+}
+
 .main {
   background-color: var(--neutral-color-6);
-  padding-inline: 1.25rem;
+  /* padding-inline: 2rem; */
   padding-block: 2rem;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
-  /* min-height: 100vh; */
 }

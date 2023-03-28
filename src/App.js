@@ -2,6 +2,7 @@ import logo from './images/logo.svg';
 import styles from './App.module.css';
 import { Input } from './components/Input';
 import { SelectTip } from './components/SelectTip';
+import { TipCalcScreen } from './components/TipCalcScreen';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
 
       <main className={styles.main}>
         <form>
-          <section>
+          <section className={styles['section--1']}>
             <Input name='bill' label='Bill' class='bg-bill' />
 
             <SelectTip />
@@ -21,28 +22,7 @@ function App() {
             <Input name='people' label='Number of People' class='bg-people' />
           </section>
 
-          <section>
-            <div>
-              <div>
-                <div>
-                  <p>Tip Amount</p>
-                  <p>/ person</p>
-                </div>
-
-                <div>$4.27</div>
-              </div>
-              <div>
-                <div>
-                  <p>Total</p>
-                  <p>/ person</p>
-                </div>
-
-                <div>$32.79</div>
-              </div>
-            </div>
-
-            <button type='submit'>Reset</button>
-          </section>
+          <TipCalcScreen />
         </form>
       </main>
     </div>
