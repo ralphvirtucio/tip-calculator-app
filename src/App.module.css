@@ -1,8 +1,4 @@
-.container {
-  /* width: 90%;
-  max-width: 30rem;
-  margin-inline: auto; */
-}
+.container {}
 
 .header {
   display: flex;
@@ -24,6 +20,7 @@
 
 .section--1 {
   padding-inline: 2rem;
+
 }
 
 .main {
@@ -32,4 +29,30 @@
   padding-block: 2rem;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
+}
+
+@media (min-width: 1024px) {
+
+  .header {
+    margin-block-start: 7rem;
+    margin-block-end: 6rem;
+  }
+
+
+  .main {
+    border-radius: 24px;
+    width: 90%;
+    max-width: 60rem;
+    margin-inline: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+  }
+
+
+  .main form {
+    display: flex;
+  }
+
+  .section--1 {
+    flex: 1;
+  }
 }
