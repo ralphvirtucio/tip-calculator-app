@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './TipCalcScreen.module.css';
 
-export const TipCalcScreen = () => {
+export const TipCalcScreen = (props) => {
+  const { obj } = props.totalAmount;
+  console.log(obj);
   return (
     <React.Fragment>
       <section className={styles.container}>
@@ -12,7 +14,11 @@ export const TipCalcScreen = () => {
               <p className={styles['price__label--2']}>/ person</p>
             </div>
 
-            <div className={styles.price}>$4.27</div>
+            {/* <p className={styles.price}>$4.27</p> */}
+            <p className={styles.price}>$0.00</p>
+            {/* <p className={styles.price}>
+              ${`${obj.bill ? '$0.00' : obj.bill}`}
+            </p> */}
           </div>
 
           <div className={styles['labels-price']}>
@@ -21,11 +27,15 @@ export const TipCalcScreen = () => {
               <p className={styles['price__label--2']}>/ person</p>
             </div>
 
-            <div className={styles.price}>$32.79</div>
+            {/* <p className={styles.price}>$32.79</p> */}
+            <p className={styles.price}>$0.00</p>
+            {/* <p className={styles.price}>
+              ${`${!obj.amount ? '$0.00' : obj.amount}`}
+            </p> */}
           </div>
         </div>
 
-        <button type='submit' className={styles.reset__btn}>
+        <button type='submit' className={styles.reset__btn} disabled={true}>
           Reset
         </button>
       </section>

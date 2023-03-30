@@ -7,9 +7,13 @@ export const Input = (props) => {
         {props.label}
       </label>
       <input
-        type='number'
+        type={props.type}
         id={props.name}
         className={`${styles.input} ${styles[`${props.class}`]}`}
+        value={props.value}
+        onChange={props.changeHandler}
+        onBlur={props.blurHandler}
+        placeholder={0}
       />
     </div>
   );
