@@ -3,8 +3,31 @@ import styles from './App.module.css';
 import { Input } from './components/Input';
 import { SelectTip } from './components/SelectTip';
 import { TipCalcScreen } from './components/TipCalcScreen';
+import { useState } from 'react';
 
 function App() {
+  const [inputBill, setInputBill] = useState('');
+  const [inputPeople, setInputPeople] = useState('');
+  const [totalAmount, setTotalAmount] = useState({});
+
+  const billChangeHandler = (e) => {
+    setInputBill(e.target.value);
+  };
+  const peopleChangeHandler = (e) => {
+    setInputPeople(e.target.value);
+  };
+
+  const inputBlurHandler = () => {
+    const obj = {
+      bill: inputBill,
+      people: inputPeople,
+    };
+
+    setTotalAmount((prev) => {
+      return { ...prev, obj };
+    });
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -15,14 +38,29 @@ function App() {
       <main className={styles.main}>
         <form>
           <section className={styles['section--1']}>
-            <Input name='bill' label='Bill' class='bg-bill' />
+            <Input
+              name='bill'
+              label='Bill'
+              class='bg-bill'
+              type='number'
+              value={inputBill}
+              changeHandler={billChangeHandler}
+            />
 
             <SelectTip />
 
-            <Input name='people' label='Number of People' class='bg-people' />
+            <Input
+              name='people'
+              label='Number of People'
+              class='bg-people'
+              type='number'
+              value={inputPeople}
+              changeHandler={peopleChangeHandler}
+              blurHandler={inputBlurHandler}
+            />
           </section>
 
-          <TipCalcScreen />
+          <TipCalcScreen totalAmount={totalAmount} />
         </form>
       </main>
     </div>

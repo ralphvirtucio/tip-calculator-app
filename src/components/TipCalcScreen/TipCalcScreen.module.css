@@ -39,6 +39,10 @@
   text-transform: uppercase;
 }
 
+.reset__btn:disabled {
+  background-color: #00666B;
+}
+
 @media (min-width:1024px) {
   .container {
     margin-block-start: 0;

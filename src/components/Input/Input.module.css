@@ -20,6 +20,11 @@
   color: var(--neutral-color-1);
 }
 
+
+.input::placeholder {
+  color: hsl(184, 19%, 68%);
+}
+
 .bg-bill {
   background-image: url('../../images/icon-dollar.svg');
   background-repeat: no-repeat;

@@ -25,7 +25,6 @@
 
 .main {
   background-color: var(--neutral-color-6);
-  /* padding-inline: 2rem; */
   padding-block: 2rem;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
@@ -34,7 +33,7 @@
 @media (min-width: 1024px) {
 
   .header {
-    margin-block-start: 7rem;
+    margin-block-start: 8rem;
     margin-block-end: 6rem;
   }
 
