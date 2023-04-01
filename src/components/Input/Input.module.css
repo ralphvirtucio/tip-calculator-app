@@ -40,3 +40,21 @@
   background-repeat: no-repeat;
   background-position: 15px center;
 }
+
+.validate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.validate p {
+  color: #ff8080;
+}
+
+.validate+input {
+  outline: 2px solid #ff8080;
+}
+
+.validate+input:focus {
+  outline: 2px solid #ff8080;
+}

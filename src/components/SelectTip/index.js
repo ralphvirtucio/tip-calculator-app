@@ -45,7 +45,11 @@ export const SelectTip = (props) => {
         />
 
         <div className={styles.custom__input}>
-          <input type='number' placeholder='Custom' />
+          <input
+            type='number'
+            placeholder='Custom'
+            // selectTipHandler={props.selectTipHandler}
+          />
         </div>
       </fieldset>
     </React.Fragment>

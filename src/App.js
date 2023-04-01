@@ -9,6 +9,7 @@ function App() {
   const [inputBill, setInputBill] = useState('');
   const [inputPeople, setInputPeople] = useState('');
   const [selectedTip, setSelectedTip] = useState('');
+  const [validate, setValidate] = useState(false);
   let totalAmount;
 
   const billChangeHandler = (e) => {
@@ -22,7 +23,13 @@ function App() {
     setSelectedTip(e.target.value);
   };
 
-  const inputBlurHandler = () => {
+  const inputBlurHandler = (e) => {
+    if (!inputPeople || inputPeople <= 0) {
+      setValidate(true);
+      return;
+    }
+
+    setValidate(false);
     // const obj = {
     //   bill: inputBill,
     //   people: inputPeople,
@@ -65,6 +72,7 @@ function App() {
               value={inputPeople}
               changeHandler={peopleChangeHandler}
               blurHandler={inputBlurHandler}
+              validate={validate}
             />
           </section>
 
