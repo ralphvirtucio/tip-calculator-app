@@ -25,6 +25,10 @@
   color: hsl(184, 19%, 68%);
 }
 
+.input:focus {
+  outline: solid 2px var(--primary-color-1);
+}
+
 .bg-bill {
   background-image: url('../../images/icon-dollar.svg');
   background-repeat: no-repeat;
