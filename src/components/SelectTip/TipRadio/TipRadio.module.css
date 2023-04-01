@@ -15,11 +15,11 @@
 }
 
 .tip input[type='radio'] {
-  /* display: none; */
+  display: none;
 }
 
 .selected {
-  background-color: var(--primary-color-1);
+  background-color: #ABEEE6;
 }
 
 .selected label {
