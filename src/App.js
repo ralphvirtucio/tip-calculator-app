@@ -10,17 +10,18 @@ function App() {
   const [inputPeople, setInputPeople] = useState('');
   const [selectedTip, setSelectedTip] = useState('');
   const [validate, setValidate] = useState(false);
-  let totalAmount;
+  const [tipAmount, setTipAmount] = useState(0.0);
+  const [totalAmount, setTotalAmount] = useState(0.0);
 
   const billChangeHandler = (e) => {
-    setInputBill(e.target.value);
+    setInputBill(+e.target.value);
   };
   const peopleChangeHandler = (e) => {
-    setInputPeople(e.target.value);
+    setInputPeople(+e.target.value);
   };
 
   const selectTipHandler = (e, tip) => {
-    setSelectedTip(e.target.value);
+    setSelectedTip(+e.target.value);
   };
 
   const inputBlurHandler = (e) => {
@@ -29,15 +30,11 @@ function App() {
       return;
     }
 
+    const tipAmount = (inputBill / inputPeople) * selectedTip;
+    const totalAmount = (inputBill * (1 + selectedTip)) / inputPeople;
+    setTipAmount(tipAmount);
+    setTotalAmount(totalAmount);
     setValidate(false);
-    // const obj = {
-    //   bill: inputBill,
-    //   people: inputPeople,
-    // };
-    // console.log(obj);
-    // // setTotalAmount((prev) => {
-    // //   return { ...prev, obj };
-    // // });
   };
 
   return (
@@ -77,7 +74,7 @@ function App() {
           </section>
 
           {/* <TipCalcScreen totalAmount={totalAmount} /> */}
-          <TipCalcScreen />
+          <TipCalcScreen tipAmount={tipAmount} totalAmount={totalAmount} />
         </form>
       </main>
     </div>

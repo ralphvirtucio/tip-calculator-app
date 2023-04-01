@@ -11,35 +11,35 @@ export const SelectTip = (props) => {
         <TipRadio
           id='five-percent'
           label='5%'
-          value='0.05'
+          value={0.05}
           selectTipHandler={props.selectTipHandler}
           tip={props.selectedTip}
         />
         <TipRadio
           id='ten-percent'
           label='10%'
-          value='0.1'
+          value={0.1}
           selectTipHandler={props.selectTipHandler}
           tip={props.selectedTip}
         />
         <TipRadio
           id='fifteen-percent'
           label='15%'
-          value='0.15'
+          value={0.15}
           selectTipHandler={props.selectTipHandler}
           tip={props.selectedTip}
         />
         <TipRadio
           id='twenty-five-percent'
           label='25%'
-          value='0.25'
+          value={0.25}
           selectTipHandler={props.selectTipHandler}
           tip={props.selectedTip}
         />
         <TipRadio
           id='fifty-percent'
           label='50%'
-          value='0.5'
+          value={0.5}
           selectTipHandler={props.selectTipHandler}
           tip={props.selectedTip}
         />

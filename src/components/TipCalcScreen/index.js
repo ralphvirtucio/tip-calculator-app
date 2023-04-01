@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './TipCalcScreen.module.css';
 
 export const TipCalcScreen = (props) => {
-  // const { obj } = props.totalAmount;
+  const { tipAmount, totalAmount } = props;
   return (
     <React.Fragment>
       <section className={styles.container}>
@@ -13,11 +13,9 @@ export const TipCalcScreen = (props) => {
               <p className={styles['price__label--2']}>/ person</p>
             </div>
 
-            {/* <p className={styles.price}>$4.27</p> */}
-            <p className={styles.price}>$0.00</p>
-            {/* <p className={styles.price}>
-              ${`${obj.bill ? '$0.00' : obj.bill}`}
-            </p> */}
+            <p className={styles.price}>
+              {`${!tipAmount ? '$0.00' : tipAmount.toFixed(2)}`}
+            </p>
           </div>
 
           <div className={styles['labels-price']}>
@@ -26,11 +24,9 @@ export const TipCalcScreen = (props) => {
               <p className={styles['price__label--2']}>/ person</p>
             </div>
 
-            {/* <p className={styles.price}>$32.79</p> */}
-            <p className={styles.price}>$0.00</p>
-            {/* <p className={styles.price}>
-              ${`${!obj.amount ? '$0.00' : obj.amount}`}
-            </p> */}
+            <p className={styles.price}>
+              {`${!totalAmount ? '$0.00' : totalAmount.toFixed(2)}`}
+            </p>
           </div>
         </div>
 
