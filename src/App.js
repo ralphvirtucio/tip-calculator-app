@@ -8,7 +8,8 @@ import { useState } from 'react';
 function App() {
   const [inputBill, setInputBill] = useState('');
   const [inputPeople, setInputPeople] = useState('');
-  const [totalAmount, setTotalAmount] = useState({});
+  const [selectedTip, setSelectedTip] = useState('');
+  let totalAmount;
 
   const billChangeHandler = (e) => {
     setInputBill(e.target.value);
@@ -17,15 +18,19 @@ function App() {
     setInputPeople(e.target.value);
   };
 
-  const inputBlurHandler = () => {
-    const obj = {
-      bill: inputBill,
-      people: inputPeople,
-    };
+  const selectTipHandler = (e, tip) => {
+    setSelectedTip(e.target.value);
+  };
 
-    setTotalAmount((prev) => {
-      return { ...prev, obj };
-    });
+  const inputBlurHandler = () => {
+    // const obj = {
+    //   bill: inputBill,
+    //   people: inputPeople,
+    // };
+    // console.log(obj);
+    // // setTotalAmount((prev) => {
+    // //   return { ...prev, obj };
+    // // });
   };
 
   return (
@@ -47,7 +52,10 @@ function App() {
               changeHandler={billChangeHandler}
             />
 
-            <SelectTip />
+            <SelectTip
+              selectTipHandler={selectTipHandler}
+              selectedTip={selectedTip}
+            />
 
             <Input
               name='people'
@@ -60,7 +68,8 @@ function App() {
             />
           </section>
 
-          <TipCalcScreen totalAmount={totalAmount} />
+          {/* <TipCalcScreen totalAmount={totalAmount} /> */}
+          <TipCalcScreen />
         </form>
       </main>
     </div>

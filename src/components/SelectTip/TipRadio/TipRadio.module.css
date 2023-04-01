@@ -5,13 +5,23 @@
   align-items: center;
   background-color: var(--neutral-color-1);
   padding-block: .5rem;
+  cursor: pointer;
 }
 
 .tip label {
   color: var(--neutral-color-6);
   font-size: var(--fs-inputs);
+  cursor: pointer;
 }
 
 .tip input[type='radio'] {
-  display: none;
+  /* display: none; */
+}
+
+.selected {
+  background-color: var(--primary-color-1);
+}
+
+.selected label {
+  color: var(--neutral-color-1);
 }
