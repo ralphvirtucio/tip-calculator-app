@@ -2,9 +2,15 @@ import React from 'react';
 import styles from './TipRadio.module.css';
 
 export const TipRadio = (props) => {
+  const activeStyles = props.value === props.tip ? 'selected' : '';
+
   return (
     <React.Fragment>
-      <div className={`${styles.tip}`}>
+      {/* <div> */}
+      <label
+        htmlFor={props.id}
+        className={`${styles.tip} ${styles[activeStyles]}`}>
+        {props.label}
         <input
           type='radio'
           name='tip'
@@ -12,8 +18,8 @@ export const TipRadio = (props) => {
           value={props.value}
           onChange={props.selectTipHandler}
         />
-        <label htmlFor={props.id}>{props.label}</label>
-      </div>
+      </label>
+      {/* </div> */}
     </React.Fragment>
   );
 };

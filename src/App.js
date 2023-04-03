@@ -7,31 +7,48 @@ import { useState } from 'react';
 
 function App() {
   const [inputBill, setInputBill] = useState('');
-  const [inputPeople, setInputPeople] = useState('');
-  const [selectedTip, setSelectedTip] = useState('');
-  let totalAmount;
+  const [billTouch, setBillTouch] = useState(false);
+  // const [inputPeople, setInputPeople] = useState('');
+  // const [selectedTip, setSelectedTip] = useState('');
+  // const [validate, setValidate] = useState(false);
+  // const [tipAmount, setTipAmount] = useState(0.0);
+  // const [totalAmount, setTotalAmount] = useState(0.0);
 
   const billChangeHandler = (e) => {
+    if (+inputBill !== 0) {
+      setBillTouch(false);
+    }
+
     setInputBill(e.target.value);
   };
-  const peopleChangeHandler = (e) => {
-    setInputPeople(e.target.value);
-  };
 
-  const selectTipHandler = (e, tip) => {
-    setSelectedTip(e.target.value);
+  const billBlurHandler = (e) => {
+    console.log(+inputBill);
+    if (+inputBill === 0) {
+      setBillTouch(true);
+    }
+    // setInputBill(e.target.value);
   };
+  // const peopleChangeHandler = (e) => {
+  //   setInputPeople(+e.target.value);
+  // };
 
-  const inputBlurHandler = () => {
-    // const obj = {
-    //   bill: inputBill,
-    //   people: inputPeople,
-    // };
-    // console.log(obj);
-    // // setTotalAmount((prev) => {
-    // //   return { ...prev, obj };
-    // // });
-  };
+  // const selectTipHandler = (e, tip) => {
+  //   setSelectedTip(+e.target.value);
+  // };
+
+  // const inputBlurHandler = (e) => {
+  //   if (!inputPeople || inputPeople <= 0) {
+  //     setValidate(true);
+  //     return;
+  //   }
+
+  //   const tipAmount = (inputBill / inputPeople) * selectedTip;
+  //   const totalAmount = (inputBill * (1 + selectedTip)) / inputPeople;
+  //   setTipAmount(tipAmount);
+  //   setTotalAmount(totalAmount);
+  //   setValidate(false);
+  // };
 
   return (
     <div className={styles.container}>
@@ -50,26 +67,30 @@ function App() {
               type='number'
               value={inputBill}
               changeHandler={billChangeHandler}
+              blurHandler={billBlurHandler}
+              validate={billTouch}
             />
 
             <SelectTip
-              selectTipHandler={selectTipHandler}
-              selectedTip={selectedTip}
+            // selectTipHandler={selectTipHandler}
+            // selectedTip={selectedTip}
             />
 
-            <Input
+            {/* <Input
               name='people'
               label='Number of People'
               class='bg-people'
               type='number'
-              value={inputPeople}
-              changeHandler={peopleChangeHandler}
-              blurHandler={inputBlurHandler}
-            />
+              // value={inputPeople}
+              // changeHandler={peopleChangeHandler}
+              // blurHandler={inputBlurHandler}
+              // validate={validate}
+            /> */}
           </section>
 
-          {/* <TipCalcScreen totalAmount={totalAmount} /> */}
           <TipCalcScreen />
+          {/* <TipCalcScreen totalAmount={totalAmount} /> */}
+          {/* <TipCalcScreen tipAmount={tipAmount} totalAmount={totalAmount} /> */}
         </form>
       </main>
     </div>
