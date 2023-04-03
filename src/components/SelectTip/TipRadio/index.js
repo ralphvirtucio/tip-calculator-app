@@ -6,7 +6,11 @@ export const TipRadio = (props) => {
 
   return (
     <React.Fragment>
-      <div className={`${styles.tip} ${styles[activeStyles]}`}>
+      {/* <div> */}
+      <label
+        htmlFor={props.id}
+        className={`${styles.tip} ${styles[activeStyles]}`}>
+        {props.label}
         <input
           type='radio'
           name='tip'
@@ -14,8 +18,8 @@ export const TipRadio = (props) => {
           value={props.value}
           onChange={props.selectTipHandler}
         />
-        <label htmlFor={props.id}>{props.label}</label>
-      </div>
+      </label>
+      {/* </div> */}
     </React.Fragment>
   );
 };

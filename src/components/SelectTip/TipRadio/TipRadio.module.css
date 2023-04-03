@@ -6,13 +6,11 @@
   background-color: var(--neutral-color-1);
   padding-block: .5rem;
   cursor: pointer;
-}
-
-.tip label {
   color: var(--neutral-color-6);
   font-size: var(--fs-inputs);
-  cursor: pointer;
+
 }
+
 
 .tip input[type='radio'] {
   display: none;
@@ -20,8 +18,5 @@
 
 .selected {
   background-color: #ABEEE6;
-}
-
-.selected label {
   color: var(--neutral-color-1);
 }
