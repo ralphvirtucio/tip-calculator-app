@@ -15,7 +15,7 @@ function App() {
   // const [totalAmount, setTotalAmount] = useState(0.0);
 
   const billChangeHandler = (e) => {
-    if (+inputBill !== 0) {
+    if (!inputBill || inputBill === '0') {
       setBillTouch(false);
     }
 
@@ -23,11 +23,9 @@ function App() {
   };
 
   const billBlurHandler = (e) => {
-    console.log(+inputBill);
-    if (+inputBill === 0) {
+    if (!inputBill || inputBill === '0') {
       setBillTouch(true);
     }
-    // setInputBill(e.target.value);
   };
   // const peopleChangeHandler = (e) => {
   //   setInputPeople(+e.target.value);
