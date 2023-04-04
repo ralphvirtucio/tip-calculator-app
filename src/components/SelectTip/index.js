@@ -5,7 +5,6 @@ import { TipRadio } from './TipRadio';
 export const SelectTip = (props) => {
   const tip = +props.selectedTip;
 
-  console.log(tip);
   return (
     <React.Fragment>
       <fieldset className={styles['select-tip']}>
