@@ -8,15 +8,14 @@
   cursor: pointer;
   color: var(--neutral-color-6);
   font-size: var(--fs-inputs);
-
-}
-
-
-.tip input[type='radio'] {
-  display: none;
 }
 
 .selected {
   background-color: #ABEEE6;
   color: var(--neutral-color-1);
+}
+
+
+.tip input[type='radio'] {
+  display: none;
 }

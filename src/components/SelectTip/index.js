@@ -3,6 +3,9 @@ import styles from './SelectTip.module.css';
 import { TipRadio } from './TipRadio';
 
 export const SelectTip = (props) => {
+  const tip = +props.selectedTip;
+
+  console.log(tip);
   return (
     <React.Fragment>
       <fieldset className={styles['select-tip']}>
@@ -13,35 +16,35 @@ export const SelectTip = (props) => {
           label='5%'
           value={0.05}
           selectTipHandler={props.selectTipHandler}
-          tip={props.selectedTip}
+          tip={tip}
         />
         <TipRadio
           id='ten-percent'
           label='10%'
           value={0.1}
           selectTipHandler={props.selectTipHandler}
-          tip={props.selectedTip}
+          tip={tip}
         />
         <TipRadio
           id='fifteen-percent'
           label='15%'
           value={0.15}
           selectTipHandler={props.selectTipHandler}
-          tip={props.selectedTip}
+          tip={tip}
         />
         <TipRadio
           id='twenty-five-percent'
           label='25%'
           value={0.25}
           selectTipHandler={props.selectTipHandler}
-          tip={props.selectedTip}
+          tip={tip}
         />
         <TipRadio
           id='fifty-percent'
           label='50%'
           value={0.5}
           selectTipHandler={props.selectTipHandler}
-          tip={props.selectedTip}
+          tip={tip}
         />
 
         <div className={styles.custom__input}>

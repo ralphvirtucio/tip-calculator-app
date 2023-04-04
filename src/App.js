@@ -10,10 +10,7 @@ function App() {
   const [billTouch, setBillTouch] = useState(false);
   const [inputPeople, setInputPeople] = useState('');
   const [inputPeopleTouch, setInputPeopleTouch] = useState(false);
-  // const [selectedTip, setSelectedTip] = useState('');
-  // const [validate, setValidate] = useState(false);
-  // const [tipAmount, setTipAmount] = useState(0.0);
-  // const [totalAmount, setTotalAmount] = useState(0.0);
+  const [selectedTip, setSelectedTip] = useState(0);
 
   const billChangeHandler = (e) => {
     if (!inputBill || inputBill === '0') {
@@ -43,6 +40,10 @@ function App() {
     }
   };
 
+  const selectedTipHandler = (e) => {
+    setSelectedTip(e.target.value);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -65,8 +66,8 @@ function App() {
             />
 
             <SelectTip
-            // selectTipHandler={selectTipHandler}
-            // selectedTip={selectedTip}
+              selectTipHandler={selectedTipHandler}
+              selectedTip={selectedTip}
             />
 
             <Input
