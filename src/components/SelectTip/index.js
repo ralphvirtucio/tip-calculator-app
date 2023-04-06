@@ -9,6 +9,12 @@ export const SelectTip = (props) => {
     <React.Fragment>
       <fieldset className={styles['select-tip']}>
         <legend className={styles.label}>Select tip %</legend>
+        <input type='radio' name='tip' id='' />
+        <input type='radio' name='tip' id='' />
+        <input type='radio' name='tip' id='' />
+        <input type='radio' name='tip' id='' />
+        <input type='radio' name='tip' id='' />
+        <input type='radio' name='tip' id='' />
         {/* 
         <TipRadio
           id='five-percent'
