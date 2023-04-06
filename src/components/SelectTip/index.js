@@ -9,7 +9,7 @@ export const SelectTip = (props) => {
     <React.Fragment>
       <fieldset className={styles['select-tip']}>
         <legend className={styles.label}>Select tip %</legend>
-
+        {/* 
         <TipRadio
           id='five-percent'
           label='5%'
@@ -52,7 +52,7 @@ export const SelectTip = (props) => {
             placeholder='Custom'
             // selectTipHandler={props.selectTipHandler}
           />
-        </div>
+        </div> */}
       </fieldset>
     </React.Fragment>
   );
