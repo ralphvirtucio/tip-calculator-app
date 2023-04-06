@@ -1,12 +1,8 @@
 import React from 'react';
 import styles from './TipRadio.module.css';
 
-// TASK
-// Radio Buttons change the background and color when selected // Completed
-// Get Value of the selected tip only one value can be selected // Completed
-
 export const TipRadio = (props) => {
-  const activeStyles = props.value === +props.selectedTip ? 'selected' : '';
+  const activeStyles = props.value === props.selectedTip ? 'selected' : '';
 
   return (
     <React.Fragment>
@@ -16,11 +12,11 @@ export const TipRadio = (props) => {
         {props.label}
         <input
           type='radio'
-          name='tip'
+          name={props.name}
           id={props.id}
           value={props.value}
           onChange={props.selectTipHandler}
-          checked={+props.selectedTip === props.value}
+          checked={props.selectedTip === props.value}
         />
       </label>
     </React.Fragment>
