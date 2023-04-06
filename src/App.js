@@ -10,7 +10,7 @@ function App() {
   const [billTouch, setBillTouch] = useState(false);
   const [inputPeople, setInputPeople] = useState('');
   const [inputPeopleTouch, setInputPeopleTouch] = useState(false);
-  const [selectedTip, setSelectedTip] = useState(0);
+  const [selectedTip, setSelectedTip] = useState('');
 
   const billChangeHandler = (e) => {
     if (!inputBill || inputBill === '0') {
@@ -66,8 +66,8 @@ function App() {
             />
 
             <SelectTip
-              selectTipHandler={selectedTipHandler}
               selectedTip={selectedTip}
+              selectTipHandler={selectedTipHandler}
             />
 
             <Input

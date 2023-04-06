@@ -6,9 +6,7 @@ import styles from './TipRadio.module.css';
 // Get Value of the selected tip only one value can be selected // Completed
 
 export const TipRadio = (props) => {
-  const activeStyles = props.value === props.tip ? 'selected' : '';
-
-  //
+  const activeStyles = props.value === +props.selectedTip ? 'selected' : '';
 
   return (
     <React.Fragment>
@@ -22,6 +20,7 @@ export const TipRadio = (props) => {
           id={props.id}
           value={props.value}
           onChange={props.selectTipHandler}
+          checked={+props.selectedTip === props.value}
         />
       </label>
     </React.Fragment>
