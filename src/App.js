@@ -12,7 +12,11 @@ function App() {
   const [inputPeopleTouch, setInputPeopleTouch] = useState(false);
   const [selectedTip, setSelectedTip] = useState('');
 
-  const isFormFilledOut = inputBill && inputPeople && selectedTip;
+  // TEMP
+  const [customInput, setCustomInput] = useState('');
+
+  const isFormFilledOut =
+    inputBill && inputPeople && (selectedTip || customInput);
 
   const billChangeHandler = (e) => {
     if (!inputBill || inputBill === '0') {
@@ -50,7 +54,16 @@ function App() {
     if (selectedTip) {
       setSelectedTip('');
     }
-    setSelectedTip(e.target.value);
+    setCustomInput(e.target.value);
+  };
+
+  const resetForm = (e) => {
+    e.preventDefault();
+
+    setInputBill('');
+    setInputPeople('');
+    setSelectedTip('');
+    setCustomInput('');
   };
 
   return (
@@ -61,7 +74,7 @@ function App() {
       </header>
 
       <main className={styles.main}>
-        <form>
+        <form onSubmit={resetForm}>
           <section className={styles['section--1']}>
             <Input
               name='bill'
@@ -78,6 +91,7 @@ function App() {
               selectedTip={selectedTip}
               selectTipHandler={selectedTipHandler}
               customSelectTipHandler={customSelectTipHandler}
+              customInput={customInput}
             />
 
             <Input
