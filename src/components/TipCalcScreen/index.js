@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './TipCalcScreen.module.css';
 
 export const TipCalcScreen = (props) => {
-  const { tipAmount, totalAmount } = props;
+  console.log(isFinite(props.tipAmount));
+  console.log(isFinite(props.totalAmount));
   return (
     <React.Fragment>
       <section className={styles.container}>
@@ -14,7 +15,10 @@ export const TipCalcScreen = (props) => {
             </div>
 
             <p className={styles.price}>
-              {`${!tipAmount ? '$0.00' : tipAmount.toFixed(2)}`}
+              $
+              {`${
+                isFinite(props.tipAmount) ? props.tipAmount.toFixed(2) : '0.00'
+              }`}
             </p>
           </div>
 
@@ -25,7 +29,12 @@ export const TipCalcScreen = (props) => {
             </div>
 
             <p className={styles.price}>
-              {`${!totalAmount ? '$0.00' : totalAmount.toFixed(2)}`}
+              $
+              {`${
+                isFinite(props.totalAmount)
+                  ? props.totalAmount.toFixed(2)
+                  : '0.00'
+              }`}
             </p>
           </div>
         </div>
