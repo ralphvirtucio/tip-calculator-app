@@ -52,19 +52,10 @@ export const SelectTip = (props) => {
           <input
             type='number'
             placeholder='Custom'
-            onFocus={props.selectTipHandler}
+            onChange={props.customSelectTipHandler}
+            onFocus={props.customSelectTipHandler}
           />
         </div>
-        {/* TASK CUSTOM INPUT */}
-
-        {/* 
-        <div className={styles.custom__input}>
-          <input
-            type='number'
-            placeholder='Custom'
-            // selectTipHandler={props.selectTipHandler}
-          />
-        </div> */}
       </fieldset>
     </React.Fragment>
   );

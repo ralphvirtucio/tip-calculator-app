@@ -44,6 +44,15 @@ function App() {
     setSelectedTip(e.target.value);
   };
 
+  const customSelectTipHandler = (e) => {
+    if (selectedTip) {
+      setSelectedTip('');
+    }
+    setSelectedTip(e.target.value);
+
+    // setSelectedTip(e.target.value);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -68,6 +77,7 @@ function App() {
             <SelectTip
               selectedTip={selectedTip}
               selectTipHandler={selectedTipHandler}
+              customSelectTipHandler={customSelectTipHandler}
             />
 
             <Input
