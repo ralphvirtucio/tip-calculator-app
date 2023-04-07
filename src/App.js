@@ -12,6 +12,8 @@ function App() {
   const [inputPeopleTouch, setInputPeopleTouch] = useState(false);
   const [selectedTip, setSelectedTip] = useState('');
 
+  const isFormFilledOut = inputBill && inputPeople && selectedTip;
+
   const billChangeHandler = (e) => {
     if (!inputBill || inputBill === '0') {
       setBillTouch(false);
@@ -49,8 +51,6 @@ function App() {
       setSelectedTip('');
     }
     setSelectedTip(e.target.value);
-
-    // setSelectedTip(e.target.value);
   };
 
   return (
@@ -92,7 +92,7 @@ function App() {
             />
           </section>
 
-          <TipCalcScreen />
+          <TipCalcScreen isFormFilledOut={isFormFilledOut} />
           {/* <TipCalcScreen totalAmount={totalAmount} /> */}
           {/* <TipCalcScreen tipAmount={tipAmount} totalAmount={totalAmount} /> */}
         </form>
@@ -102,23 +102,3 @@ function App() {
 }
 
 export default App;
-
-// Bill
-
-//   Select Tip %
-//   5%
-//   10%
-//   15%
-//   25%
-//   50%
-//   Custom
-
-//   Number of People
-
-//   Tip Amount
-//   / person
-
-//   Total
-//   / person
-
-//   Reset

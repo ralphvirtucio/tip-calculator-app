@@ -30,7 +30,10 @@ export const TipCalcScreen = (props) => {
           </div>
         </div>
 
-        <button type='submit' className={styles.reset__btn} disabled={true}>
+        <button
+          type='submit'
+          className={styles.reset__btn}
+          disabled={!props.isFormFilledOut}>
           Reset
         </button>
       </section>

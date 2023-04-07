@@ -37,6 +37,12 @@
   width: 100%;
   padding-block: .5rem;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.reset__btn:hover {
+  background-color: #ABEEE6;
+  color: var(--neutral-color-1);
 }
 
 .reset__btn:disabled {
