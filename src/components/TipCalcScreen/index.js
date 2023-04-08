@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './TipCalcScreen.module.css';
 
 export const TipCalcScreen = (props) => {
-  console.log(isFinite(props.tipAmount));
-  console.log(isFinite(props.totalAmount));
   return (
     <React.Fragment>
       <section className={styles.container}>

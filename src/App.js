@@ -5,6 +5,8 @@ import { SelectTip } from './components/SelectTip';
 import { TipCalcScreen } from './components/TipCalcScreen';
 import { useState } from 'react';
 
+// TODO: customInput
+
 function App() {
   const [inputBill, setInputBill] = useState('');
   const [billTouch, setBillTouch] = useState(false);
@@ -47,8 +49,14 @@ function App() {
       setInputPeopleTouch(true);
     }
 
-    setTotalAmount((+inputBill * (1 + +selectedTip)) / +inputPeople);
-    setTipAmount((+inputBill * +selectedTip) / +inputPeople);
+    if (customInput) {
+      const convertedCustomInput = +customInput / 100;
+      setTotalAmount((+inputBill * (1 + convertedCustomInput)) / +inputPeople);
+      setTipAmount((+inputBill * convertedCustomInput) / +inputPeople);
+    } else {
+      setTotalAmount((+inputBill * (1 + +selectedTip)) / +inputPeople);
+      setTipAmount((+inputBill * +selectedTip) / +inputPeople);
+    }
   };
 
   const selectedTipHandler = (e) => {
