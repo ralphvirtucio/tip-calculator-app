@@ -5,23 +5,13 @@ import { SelectTip } from './components/SelectTip';
 import { TipCalcScreen } from './components/TipCalcScreen';
 import { useState } from 'react';
 
-// TODO:
-// The amount in the calc screen needs to be update when the user is typing or selecting tip
-
 function App() {
   const [inputBill, setInputBill] = useState('');
   const [billTouch, setBillTouch] = useState(false);
   const [inputPeople, setInputPeople] = useState('');
   const [inputPeopleTouch, setInputPeopleTouch] = useState(false);
   const [selectedTip, setSelectedTip] = useState('');
-  // const [tipAmount, setTipAmount] = useState(0);
-  // const [totalAmount, setTotalAmount] = useState(0);
-
-  // TEMP
   const [customInput, setCustomInput] = useState('');
-
-  let tipAmount = 0;
-  let totalAmount = 0;
 
   const isFormFilledOut =
     inputBill && inputPeople && (selectedTip || customInput);
@@ -55,6 +45,10 @@ function App() {
   };
 
   const selectedTipHandler = (e) => {
+    if (customInput) {
+      setCustomInput('');
+    }
+
     setSelectedTip(e.target.value);
   };
 
@@ -73,36 +67,6 @@ function App() {
     setSelectedTip('');
     setCustomInput('');
   };
-
-  // if (customInput) {
-  //   const convertedCustomInput = +customInput / 100;
-  //   tipAmount = (+inputBill * convertedCustomInput) / +inputPeople;
-  //   totalAmount = (+inputBill * (1 + convertedCustomInput)) / +inputPeople;
-  // } else {
-  //   tipAmount = (+inputBill * +selectedTip) / +inputPeople;
-  //   totalAmount = (+inputBill * (1 + selectedTip)) / +inputPeople;
-  // }
-
-  // if (customInput) {
-  //   const convertedCustomInput = +customInput / 100;
-  //   setTotalAmount((+inputBill * (1 + convertedCustomInput)) / +inputPeople);
-  //   setTipAmount((+inputBill * convertedCustomInput) / +inputPeople);
-  // } else {
-  //   setTotalAmount((+inputBill * (1 + +selectedTip)) / +inputPeople);
-  //   setTipAmount((+inputBill * +selectedTip) / +inputPeople);
-  // }
-
-  // if (customInput) {
-  //   const convertedCustomInput = +customInput / 100;
-  //   setTotalAmount((+inputBill * (1 + convertedCustomInput)) / +inputPeople);
-  //   setTipAmount((+inputBill * convertedCustomInput) / +inputPeople);
-  // } else {
-  //   setTotalAmount((+inputBill * (1 + +selectedTip)) / +inputPeople);
-  //   setTipAmount((+inputBill * +selectedTip) / +inputPeople);
-  // }
-
-  // Formula Tip Amount: Bill * 1 _ Selected Tip / Number of People
-  // Formulat Total Person: Bill * SelectedTip / Number of People
 
   return (
     <div className={styles.container}>
@@ -146,11 +110,11 @@ function App() {
 
           <TipCalcScreen
             isFormFilledOut={isFormFilledOut}
-            tipAmount={tipAmount}
-            totalAmount={totalAmount}
+            bill={inputBill}
+            selectedTip={selectedTip}
+            people={inputPeople}
+            customTip={customInput}
           />
-          {/* <TipCalcScreen totalAmount={totalAmount} /> */}
-          {/* <TipCalcScreen tipAmount={tipAmount} totalAmount={totalAmount} /> */}
         </form>
       </main>
     </div>

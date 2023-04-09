@@ -1,7 +1,34 @@
 import React from 'react';
 import styles from './TipCalcScreen.module.css';
 
-export const TipCalcScreen = (props) => {
+export const TipCalcScreen = ({
+  isFormFilledOut,
+  bill,
+  people,
+  selectedTip,
+  customTip,
+}) => {
+  let tipAmount = 0;
+  let totalAmount = 0;
+
+  if (customTip) {
+    const convertedCustomInput = customTip / 100;
+    tipAmount = (+bill * convertedCustomInput) / +people;
+    totalAmount = (+bill * (1 + convertedCustomInput)) / +people;
+  } else {
+    tipAmount = (+bill * +selectedTip) / +people;
+    totalAmount = (+bill * (1 + +selectedTip)) / +people;
+  }
+
+  const calculatedTipAmount = isFinite(tipAmount)
+    ? Math.floor(tipAmount * 100) / 100
+    : '0.00';
+  const calculatedTotalAmount = isFinite(totalAmount)
+    ? totalAmount.toFixed(2)
+    : '0.00';
+
+  console.log(Math.floor(calculatedTipAmount * 100) / 100);
+
   return (
     <React.Fragment>
       <section className={styles.container}>
@@ -12,12 +39,7 @@ export const TipCalcScreen = (props) => {
               <p className={styles['price__label--2']}>/ person</p>
             </div>
 
-            <p className={styles.price}>
-              $
-              {`${
-                isFinite(props.tipAmount) ? props.tipAmount.toFixed(2) : '0.00'
-              }`}
-            </p>
+            <p className={styles.price}>${calculatedTipAmount}</p>
           </div>
 
           <div className={styles['labels-price']}>
@@ -26,21 +48,14 @@ export const TipCalcScreen = (props) => {
               <p className={styles['price__label--2']}>/ person</p>
             </div>
 
-            <p className={styles.price}>
-              $
-              {`${
-                isFinite(props.totalAmount)
-                  ? props.totalAmount.toFixed(2)
-                  : '0.00'
-              }`}
-            </p>
+            <p className={styles.price}>${calculatedTotalAmount}</p>
           </div>
         </div>
 
         <button
           type='submit'
           className={styles.reset__btn}
-          disabled={!props.isFormFilledOut}>
+          disabled={!isFormFilledOut}>
           Reset
         </button>
       </section>
