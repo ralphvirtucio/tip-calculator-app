@@ -49,8 +49,6 @@ export const SelectTip = (props) => {
           selectedTip={props.selectedTip}
         />
 
-        {/* TODO: Clicking reset button doesn't reset the custom input */}
-
         <div className={styles.custom__input}>
           <input
             type='number'

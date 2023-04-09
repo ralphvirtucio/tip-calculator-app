@@ -27,8 +27,6 @@ export const TipCalcScreen = ({
     ? totalAmount.toFixed(2)
     : '0.00';
 
-  console.log(Math.floor(calculatedTipAmount * 100) / 100);
-
   return (
     <React.Fragment>
       <section className={styles.container}>
